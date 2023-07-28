@@ -39,4 +39,4 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
-        namespace: '{{ print "{{ .Values.namespace }}" }}'
+        namespace: '{{ .Values.namespace }}'

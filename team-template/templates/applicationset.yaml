@@ -34,6 +34,7 @@ spec:
             - 'values.yaml'
           values: |-
             {{values}}
+            namespace: {{ print "{{ .Values.namespace }}" }}
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations

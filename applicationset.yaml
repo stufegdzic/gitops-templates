@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: '{{team}}'
+      name: {{team}}
     spec:
       project: default
       syncPolicy:
@@ -37,4 +37,4 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
-        namespace: {{ namespace }}
+        namespace: '{{ namespace }}'

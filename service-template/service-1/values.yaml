@@ -1,2 +1,3 @@
-testmap:
-  testprop: service-1_CHARTWORKS
+service:
+  configmap:
+    prop: service-1_CHARTWORKS

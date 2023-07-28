@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: 'service-applicationset'
+  name: 'service-applicationset-{{ .Values.namespace }}'
   namespace: argocd
 spec:
   generators:
@@ -38,4 +38,4 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
-        namespace: '{{ .Values.namespace }}'
+        namespace: '{{ print "{{ .Values.namespace }}" }}'

@@ -26,14 +26,14 @@ spec:
       source:
         # source repo, in this example both repositories are the same
         repoURL: https://github.com/stufegdzic/gitops-templates.git
-        targetRevision: develop
+        targetRevision: main
         # path to read manifests from, here it's the full path not only the name of the directory
         path: service-template/{{ print "{{type}}" }}
         helm:
           valueFiles:
             - 'values.yaml'
           values: |-
-            {{values}}
+            {{ print "{{values}}" }}
             namespace: {{ print "{{ .Values.namespace }}" }}
       destination:
         server: https://kubernetes.default.svc

@@ -34,7 +34,7 @@ spec:
             - 'values.yaml'
           values: |-
             {{ print "{{values}}" }}
-            namespace: {{ print "{{ .Values.namespace }}" }}
+            namespace: {{ .Values.namespace }}
             type: {{ print "{{ type }}" }}
       destination:
         server: https://kubernetes.default.svc

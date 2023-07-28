@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: '{{ print "{{ .Values.namespace}}" }}-applicationset-{{ print "{{type}}" }}'
+      name: '{{ .Values.namespace}}-applicationset-{{type}}'
     spec:
       project: default
       syncPolicy:

@@ -12,11 +12,11 @@ spec:
         revision: main
         files:
           # path to the directory that includes directories to read as variables
-          - path: teams/{{ .Values.namespace }}/**/config-service.yaml
+          - path: teams/{{ .Release.Namespace }}}/**/config-service.yaml
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: '{{ .Values.namespace}}-applicationset-{{ print "{{type}}" }}'
+      name: '{{ .Release.Namespace }}-applicationset-{{ print "{{type}}" }}'
     spec:
       project: default
       syncPolicy:
@@ -34,9 +34,8 @@ spec:
             - 'values.yaml'
           values: |-
             {{ print "{{values}}" }}
-            namespace: {{ .Values.namespace }}
             type: {{ print "{{ type }}" }}
       destination:
         server: https://kubernetes.default.svc
         # different namespaces named after the directories names to be used as destinations
-        namespace: '{{ .Values.namespace }}'
+        namespace: '{{ .Release.Namespace }}'

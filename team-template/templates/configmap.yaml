@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: configmap-{{ .Values.namespace }}
+  name: configmap-{{ .Release.Namespace }}
   namespace: {{ .Release.Namespace }}
 data:
   testprop: {{ .Values.testmap.testprop }}

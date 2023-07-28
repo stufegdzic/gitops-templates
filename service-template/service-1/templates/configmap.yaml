@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Values.namespace }}-service-1-configmap
-  namespace: {{ .Values.namespace }}
+  name: {{ .Release.Namespace }}-service-1-configmap
+  namespace: {{ .Release.Namespace }}
 data:
   testprop: {{ .Values.testmap.testprop }}

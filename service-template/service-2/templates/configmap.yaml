@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.namespace }}-service-2-configmap
+  namespace: {{ .Values.namespace }}
+data:
+  testprop: {{ .Values.testmap.testprop }}
+  some: value
+  type: {{ .Values.type }}

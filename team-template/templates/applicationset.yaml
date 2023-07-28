@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: 'service-applicationset-{{ .Values.namespace }}'
+  name: 'service-applicationset-{{ .Release.Namespace }}'
   namespace: argocd
 spec:
   generators:

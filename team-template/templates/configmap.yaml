@@ -4,5 +4,5 @@ metadata:
   name: configmap-{{ .Release.Namespace }}
   namespace: {{ .Release.Namespace }}
 data:
-  testprop: {{ .Values.testmap.testprop }}
+  testprop: {{ .Values.team.configmap.prop }}
   hello: world

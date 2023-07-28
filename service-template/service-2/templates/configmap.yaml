@@ -4,6 +4,6 @@ metadata:
   name: {{ .Release.Namespace }}-service-2-configmap
   namespace: {{ .Release.Namespace }}
 data:
-  testprop: {{ .Values.testmap.testprop }}
+  testprop: {{ .Values.service.configmap.prop }}
   some: value
   type: {{ .Values.type }}

@@ -7,7 +7,7 @@ spec:
   generators:
     - git:
         # git repository to get the variables from
-        repoURL: https://github.com/stufegdzic/gitops-teams.git
+        repoURL: https://github.com/stufegdzic/gitops-customers.git
         # branch used to get the variables from
         revision: main
         files:
@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: '{{team}}'
+      name: '{{customer}}'
     spec:
       project: default
       syncPolicy:

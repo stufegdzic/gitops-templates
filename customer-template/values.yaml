@@ -1,3 +1,2 @@
-team:
-  configmap:
-    prop: default
+configmap:
+  prop: default

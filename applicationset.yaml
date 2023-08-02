@@ -12,7 +12,7 @@ spec:
         revision: main
         files:
           # path to the directory that includes directories to read as variables
-          - path: teams/**/config-team.yaml
+          - path: customer-**/config-customer.yaml
   template:
     metadata:
       # basename is the name of the directory not the full path

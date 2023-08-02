@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: teams-applicationset
+  name: customers-applicationset
   namespace: argocd
 spec:
   generators:
@@ -16,7 +16,7 @@ spec:
   template:
     metadata:
       # basename is the name of the directory not the full path
-      name: '{{customer}}'
+      name: '{{ customer }}'
     spec:
       project: default
       syncPolicy:
@@ -28,7 +28,7 @@ spec:
         repoURL: https://github.com/stufegdzic/gitops-templates.git
         targetRevision: main
         # path to read manifests from, here it's the full path not only the name of the directory
-        path: team-template
+        path: customer-template
         helm:
           valueFiles:
             - "values.yaml"

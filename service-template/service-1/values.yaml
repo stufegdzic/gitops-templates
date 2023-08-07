@@ -75,5 +75,4 @@ affinity: {}
 
 indexHTML: "Hello, world!"
 
-configmap:
-  prop: service-1_CHARTWORKS
+message: Hi there

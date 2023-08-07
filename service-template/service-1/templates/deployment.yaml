@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: echoserver
+  name: {{ .Release.Namespace }}-{{ .Values.type }}-echoserver
   namespace: {{ .Release.Namespace }}
 spec:
-  replicas: 5
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: echoserver
@@ -14,8 +14,8 @@ spec:
         app: echoserver
     spec:
       containers:
-        - image: ealen/echo-server:latest
-          imagePullPolicy: IfNotPresent
+        - image: {{ .Values.echocservice.image }}
+          imagePullPolicy: {{ .Values.echoservice.imagePullPolicy}}
           name: echoserver
           ports:
             - containerPort: 80

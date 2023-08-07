@@ -1,15 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "nginx-example.fullname" . }}
-  labels:
-    {{- include "nginx-example.labels" . | nindent 4 }}
+  name: echoserver
+  namespace: echoserver
 spec:
-  type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
+    - port: 80
+      targetPort: 80
       protocol: TCP
-      name: http
+  type: ClusterIP
   selector:
-    {{- include "nginx-example.selectorLabels" . | nindent 4 }}
+    app: echoserver

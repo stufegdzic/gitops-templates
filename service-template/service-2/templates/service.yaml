@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
   labels:
     name: service-2-{{ .Release.Namespace }}
-    customer: "{{ .Release.Namespace }}"
+    customer: {{ .Release.Namespace }}
 spec:
   type: NodePort
   ports:
@@ -15,25 +15,4 @@ spec:
       name: service-2-port
   selector:
     app: service-2
-    customer: "{{ .Release.Namespace }}"
-
-#------------------------
-#apiVersion: v1
-#kind: Service
-#metadata:
-#  name: yari-api-portal-{{ .Values.dprData.projectId }}
-#  namespace: {{ .Release.Namespace }}
-#  labels:
-#    name: yari-api-portal-{{ .Values.dprData.projectId }}
-#    dprType: "{{ .Values.dprData.dprType }}"
-#    projectId: "{{ .Values.dprData.projectId }}"
-#spec:
-#  type: ClusterIP
-#  ports:
-#    - port: 8004
-#      targetPort: yari-api-portal
-#      name: yari-api-portal
-#      protocol: TCP
-#  selector:
-#    app: yari-api-portal
-#    projectId: "{{ .Values.dprData.projectId }}"
+    customer: {{ .Release.Namespace }}

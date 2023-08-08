@@ -12,7 +12,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "10m"
 spec:
   rules:
-    - host: localhost
+    - host: 127.0.0.1
       http:
         paths:
           - path: /{{ .Release.Namespace }}/service-2/(.*) # namespace name so it can be reached via minikube/{{ .Release.Namespace }}

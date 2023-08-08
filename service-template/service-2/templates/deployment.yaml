@@ -1,17 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: service-2-{{ .Release.Namespace }}
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: service-2
+      customer: {{ .Release.Namespace }}
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: nginx
+        app: service-2
+        customer: {{ .Release.Namespace }}
     spec:
       containers:
         - image: nginx:latest

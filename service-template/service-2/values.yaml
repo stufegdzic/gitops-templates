@@ -1,3 +1,1 @@
-service:
-  configmap:
-    prop: service-2_CHART_WORKS
+message: Hello world

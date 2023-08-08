@@ -6,7 +6,7 @@ metadata:
   customer: {{ .Release.Namespace }}
 spec:
   ports:
-    - port: 8004
+    - port: 80
       targetPort: echo-server
       name: echo-server
       protocol: TCP

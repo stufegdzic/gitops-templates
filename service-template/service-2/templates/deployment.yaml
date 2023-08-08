@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: service-2-{{ .Release.Namespace }}
 spec:
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: service-2
@@ -27,7 +28,7 @@ spec:
       volumes:
         - name: config-vol
           configMap:
-            name: nginx-config
+            name: service-2-config
             items:
               - key: nginx.conf
                 path: nginx.conf

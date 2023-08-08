@@ -1,9 +1,26 @@
+#apiVersion: v1
+#kind: ConfigMap
+#metadata:
+#  name: {{ .Release.Namespace }}-service-2-configmap
+#  namespace: {{ .Release.Namespace }}
+#data:
+#  testprop: {{ .Values.service.configmap.prop }}
+#  some: value
+#  type: {{ .Values.type }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Namespace }}-service-2-configmap
-  namespace: {{ .Release.Namespace }}
+  name: nginx-config
 data:
-  testprop: {{ .Values.service.configmap.prop }}
-  some: value
-  type: {{ .Values.type }}
+  nginx.conf: '
+events {
+}
+http {
+   server {
+       listen 80;
+       location / {
+           return 200 "Hello world!";
+       }
+   }
+}
+'

@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - image: nginx:latest
-          name: nginx
+          name: service-2
           ports:
             - containerPort: 80
               name: web

@@ -6,8 +6,9 @@ metadata:
   customer: {{ .Release.Namespace }}
 spec:
   ports:
-    - port: 80
-      targetPort: 80
+    - port: 8004
+      targetPort: echo-server
+      name: echo-server
       protocol: TCP
   type: ClusterIP
   selector:

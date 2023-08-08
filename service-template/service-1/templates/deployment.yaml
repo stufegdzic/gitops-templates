@@ -21,7 +21,7 @@ spec:
           imagePullPolicy: {{ .Values.echoservice.imagePullPolicy }}
           name: echo-server
           ports:
-            - containerPort: 80
+            - containerPort: 8004
           env:
             - name: PORT
               value: "80"

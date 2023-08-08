@@ -1,22 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Namespace }}-{{ .Values.type }}-echoserver
+  name: {{ .Release.Namespace }}-{{ .Values.type }}-echo-server
   namespace: {{ .Release.Namespace }}
+  customer: {{ .Release.Namespace }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: echo-server-deployment
+      app: echo-server
+      customer: {{ .Release.Namespace }}
   template:
     metadata:
       labels:
-        app: echoserver
+        app: echo-server
+        customer: {{ .Release.Namespace }}
     spec:
       containers:
         - image: {{ .Values.echoservice.image }}
           imagePullPolicy: {{ .Values.echoservice.imagePullPolicy }}
-          name: echoserver
+          name: echo-server
           ports:
             - containerPort: 80
           env:

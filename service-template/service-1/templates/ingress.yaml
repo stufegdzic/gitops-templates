@@ -14,7 +14,7 @@ spec:
     - host: {{ .Values.domain }}
       http:
         paths:
-          - path: /{{ .Release.Namespace }}-{{ .Values.type }}
+          - path: /{{ .Release.Namespace }}/{{ .Values.type }}
             pathType: Prefix
             backend:
               service:

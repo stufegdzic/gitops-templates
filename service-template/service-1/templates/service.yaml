@@ -15,4 +15,4 @@ spec:
     - name: service-1
       protocol: TCP
       port: 80
-      targetPort: service-1
+      targetPort: 80

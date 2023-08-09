@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: service-1-ingress-{{ .Release.Namespace }}
+spec:
+  rules:
+    - host: kubernetes.docker.internal
+      http:
+        paths:
+          - path: /{{ .Release.Namespace }}-{{ .Values.type }}
+            backend:
+              serviceName: service-1-{{ .Release.Namespace }}
+              servicePort: http

@@ -8,11 +8,11 @@ metadata:
     customer: {{ .Release.Namespace }}
 spec:
   type: NodePort
-  ports:
-    - port: 80
-      targetPort: service-1
-      name: service-1
-      protocol: TCP
   selector:
     app: service-1
-    customer: {{ .Release.Namespace }}
+    customer: { { .Release.Namespace } }
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: service-1

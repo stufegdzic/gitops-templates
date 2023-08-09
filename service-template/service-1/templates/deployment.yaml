@@ -8,18 +8,20 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: echo-server
+      app: service-1
       customer: {{ .Release.Namespace }}
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
-        app: echo-server
+        app: service-1
         customer: {{ .Release.Namespace }}
     spec:
       containers:
         - image: {{ .Values.echoservice.image }}
           imagePullPolicy: {{ .Values.echoservice.imagePullPolicy }}
-          name: echo-server
+          name: service-1
           ports:
             - containerPort: 80
           env:

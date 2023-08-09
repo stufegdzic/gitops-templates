@@ -4,15 +4,15 @@ metadata:
   name: service-1-{{ .Release.Namespace }}
   namespace: {{ .Release.Namespace }}
   labels:
-    name: service-2-{{ .Release.Namespace }}
+    name: service-1-{{ .Release.Namespace }}
     customer: {{ .Release.Namespace }}
 spec:
   type: NodePort
   ports:
     - port: 80
-      targetPort: echo-server
-      name: echo-server
+      targetPort: service-1
+      name: service-1
       protocol: TCP
   selector:
-    app: echo-server
+    app: service-1
     customer: {{ .Release.Namespace }}

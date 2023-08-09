@@ -10,4 +10,4 @@ spec:
           - path: /{{ .Release.Namespace }}-{{ .Values.type }}
             backend:
               serviceName: service-1-{{ .Release.Namespace }}
-              servicePort: http
+              servicePort: service-1

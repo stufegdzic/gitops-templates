@@ -12,7 +12,7 @@ spec:
     app: service-1
     customer: {{ .Release.Namespace }}
   ports:
-    - name: http
+    - name: service-1
       protocol: TCP
       port: 80
       targetPort: service-1
